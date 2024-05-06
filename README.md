@@ -2,15 +2,7 @@
 
 This is a step-by-step guide on how to run the application.
 
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* You have installed the latest version of Node.js and npm.
-* You have a Windows machine. This guide is tailored for Windows users.
-
-To install the application, follow these steps:
-## Installing <Lognet-Systems-OTP>
+## Installing the Dependencies
 
 1. Clone the repository: `git clone <repository_url>`
 2. Navigate into the project directory: `cd <project_directory>`
