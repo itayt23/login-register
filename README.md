@@ -12,7 +12,7 @@ This is a step-by-step guide on how to run the application.
 ## Setting up the Environment Variables
 
 The application requires certain environment variables to run properly. These are stored in a `.env` file.
-Create a new file named `.env` in the server directory and add the following variables:
+Create a new file named `.env` in the **server directory** and add the following variables:
 
 ```properties
 DB_URI=<your_database_uri> (Should be a MongoDB - I used Atlas)
