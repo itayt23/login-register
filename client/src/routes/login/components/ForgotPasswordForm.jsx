@@ -1,7 +1,9 @@
 import {useState} from "react";
-
+import { MdEmail } from "react-icons/md";
+import './ForgotPasswordForm.css';
 const ForgotPasswordForm = ({onSubmit}) => {
     const [email, setEmail] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -10,7 +12,9 @@ const ForgotPasswordForm = ({onSubmit}) => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email})
         });
-
+        if (response.status === 404) {
+            setErrorMessage('User not found!');
+        } 
         if (!response.ok) {
             console.error('Error initiating password reset:', response.statusText);
         } else {
@@ -21,10 +25,14 @@ const ForgotPasswordForm = ({onSubmit}) => {
 
     return (
         <div className="forgot-password-container">
-            <h1>Forgot Password</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                <h1>Forgot Password</h1>
+                <p>Enter your email address to reset your password</p>
+                {errorMessage && <div className="error-message">{errorMessage}</div>}
+                <div className="input-box">
+                    <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                    <MdEmail className="icon"/>
+                </div>
                 <button type="submit">Reset Password</button>
             </form>
         </div>

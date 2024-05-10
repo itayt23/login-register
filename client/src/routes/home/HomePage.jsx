@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom';
+import './HomePage.css';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -6,7 +7,6 @@ const HomePage = () => {
     return (
         <div className="home-container">
             <h1>LogNet Systems</h1>
-            <p>Welcome to LogNet Systems!</p>
             <div className="buttons">
                 <button onClick={() => navigate('/login')}>Login</button>
                 <button onClick={() => navigate('/register')}>Register</button>

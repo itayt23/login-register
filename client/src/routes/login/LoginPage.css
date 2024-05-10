@@ -10,8 +10,9 @@
 }
 
 .login-container .error-message{
-    color: rgb(191, 17, 17);
-    font-size: 15px;
+    color: red;
+    font-weight: 700;
+    font-size: 18px;
     text-align: center;
     margin-top: 20px
 }

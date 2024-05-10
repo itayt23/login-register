@@ -21,10 +21,13 @@ body {
   no-repeat;
   background-size: cover;
   background-position: center;
-
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button:hover{
+  background: #ddd !important;
 }

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './LoginPage.css';
 import { FaUser, FaLock } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 
 const LoginPage = () => {
     const [email, setEmail] = useState(''); 
@@ -50,7 +52,7 @@ const LoginPage = () => {
                 {errorMessage && <div className="error-message">{errorMessage}</div>}
                 <div className="input-box">
                     <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-                    <FaUser className="icon"/>
+                    <MdEmail className="icon"/>
                 </div>
                 <div className="input-box">
                     <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>

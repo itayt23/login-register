@@ -1,5 +1,7 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import { FaLock } from "react-icons/fa";
+import './PasswordResetForm.css';
 
 const PasswordResetForm = ({email}) => {
     const [password, setPassword] = useState('');
@@ -22,11 +24,12 @@ const PasswordResetForm = ({email}) => {
 
     return (
         <div className="change-password-container">
-            <h1>Change Password</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="password">New Password</label>
-                <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}
-                       required/>
+                <h1>Change Password</h1>
+                <div className="input-box">
+                    <input type="password" placeholder="New Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+                    <FaLock className="icon"/>
+                </div>
                 <button type="submit">Change Password</button>
             </form>
         </div>

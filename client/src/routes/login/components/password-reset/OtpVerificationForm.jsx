@@ -1,7 +1,10 @@
 import {useState} from "react";
+import { SiAuth0 } from "react-icons/si";
+import './OtpVerificationForm.css';
 
 const OtpVerificationForm = ({email, setIsOtpVerified}) => {
     const [otp, setOtp] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -11,6 +14,9 @@ const OtpVerificationForm = ({email, setIsOtpVerified}) => {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({email, otp})
             });
+            if (response.status === 400) {
+                setErrorMessage('Invalid OTP!');
+            }
             if (!response.ok) {
                 console.error('Error verifying OTP:', response.statusText);
             } else {
@@ -24,14 +30,18 @@ const OtpVerificationForm = ({email, setIsOtpVerified}) => {
     };
 
     return (
-        <>
-            <h1>Verify OTP</h1>
+        <div className="otp-verification-container">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="otp">OTP</label>
-                <input type="text" id="otp" value={otp} onChange={(e) => setOtp(e.target.value)} required/>
+                <h1>Verify OTP</h1>
+                <p>Check your email and enter the 6-digit OTP code</p>
+                {errorMessage && <div className="error-message">{errorMessage}</div>}
+                <div className="input-box">
+                    <input type="text" placeholder="OTP" value={otp} onChange={(e) => setOtp(e.target.value)} required/>
+                    <SiAuth0 className="icon"/>
+                </div>
                 <button type="submit">Verify OTP</button>
             </form>
-        </>
+        </div>
     );
 };
 

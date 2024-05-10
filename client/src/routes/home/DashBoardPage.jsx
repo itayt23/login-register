@@ -3,8 +3,9 @@ import './DashboardPage.css';
 
 const DashboardPage = () => {
     return (
-        <div className="dashboard">
-            <h1>Lognet Systems</h1>
+        <div className="dashboard-container">
+            <h1>Welcome to Lognet Systems</h1>
+            <h3>You logged in Successfully</h3>
         </div>
     );
 }
