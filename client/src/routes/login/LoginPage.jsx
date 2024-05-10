@@ -29,6 +29,7 @@ const LoginPage = () => {
                 }
                 else if (response.status === 401) {
                     console.log('Invalid credentials');
+                    setErrorMessage('Wrong password!');
                 } 
                 else throw new Error('Network response was not ok');
             }
