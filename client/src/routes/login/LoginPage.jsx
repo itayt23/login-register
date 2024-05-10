@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './LoginPage.css';
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 
@@ -64,7 +64,7 @@ const LoginPage = () => {
                 </div>
                 <button type="submit"> Submit</button>
                 <div className="register-link">
-                    <p>Don't have an account? <a href="#" onClick={handleRegisterClick}>Register</a></p>
+                    <p>Don't have an account? <a href="/register" onClick={handleRegisterClick}>Register</a></p>
                 </div>
             </form>
         </div>
