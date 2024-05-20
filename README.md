@@ -1,4 +1,4 @@
-# Lognet-Systems-OTP
+# React-Login-Register Flow
 
 This is a step-by-step guide on how to run the application.
 
